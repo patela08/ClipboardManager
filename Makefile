@@ -38,7 +38,7 @@ format-check:
 # Build the .app bundle
 app:
 	cd ClipboardManager && swift build
-	cd ClipboardManager && .build/build-app.sh
+	cd ./ClipboardManager && ./build-app.sh
 
 # Run all quality checks
 check: lint format-check build test

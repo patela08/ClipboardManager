@@ -113,10 +113,14 @@ final class PickerViewModel: ObservableObject {
             pasteboard.setString(plainFallback, forType: .string)
 
         case .image(let data, _):
-            pasteboard.setData(data, forType: .tiff)
+            if let image = NSImage(data: data) {
+                pasteboard.writeObjects([image])
+            } else {
+                pasteboard.setData(data, forType: .tiff)
+            }
 
         case .file(let url, _):
-            pasteboard.setString(url.absoluteString, forType: .fileURL)
+            pasteboard.writeObjects([url as NSURL])
         }
 
         simulatePaste()
