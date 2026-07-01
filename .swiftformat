@@ -1,0 +1,19 @@
+# SwiftFormat configuration for ClipboardManager
+# Install: brew install swiftformat
+# Run: swiftformat ClipboardManager/Sources ClipboardManager/Tests
+
+--swiftversion 6.1
+--indent 4
+--indentcase false
+--trimwhitespace always
+--stripunusedargs closure-only
+--maxwidth 120
+--wraparguments before-first
+--wrapparameters before-first
+--wrapcollections before-first
+--closingparen balanced
+--self remove
+--importgrouping testable-bottom
+--header strip
+--disable redundantReturn
+--disable trailingCommas
